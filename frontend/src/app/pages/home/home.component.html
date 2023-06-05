@@ -1,0 +1,73 @@
+<div class="flex h-full">
+  <section
+    style="
+      background-image: linear-gradient(
+          to right,
+          rgba(17, 0, 158, 0.8),
+          rgba(73, 66, 228, 0.5)
+        ),
+        url('../../../assets/city-bg.jpg');
+    "
+    class="flex w-1/2 bg-cover flex-col justify-center items-center"
+  >
+    <img
+      class="h-18 w-18 mb-[-100px] ml-[-65px]"
+      src="../../../assets/logo.svg"
+      alt="logo-img"
+      srcset=""
+    />
+    <h1 class="text-white uppercase font-bold text-4xl tracking-wide">
+      Evergreen trust bank
+    </h1>
+    <h2 class="text-white uppercase font-extralight tracking-wider">
+      empowering your financial journey
+    </h2>
+  </section>
+  <section class="bg-[#4942E4] w-1/2 flex justify-center items-center flex-col">
+    <form
+      class="flex flex-col w-4/6 h-4/6"
+      [formGroup]="loginForm"
+      (ngSubmit)="onSubmit()"
+    >
+      <label for="accountIdInput" class="text-white font-medium p-2 mt-5"
+        >Name:</label
+      >
+      <input
+        id="accountIdInput"
+        type="text"
+        placeholder="Name"
+        formControlName="firstName"
+        class="block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+      />
+
+      <label for="accountIdInput" class="text-white font-medium p-2 mt-5"
+        >Last Name:</label
+      >
+      <input
+        id="accountIdInput"
+        type="text"
+        placeholder="Last Name"
+        formControlName="lastName"
+        class="block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+      />
+
+      <label for="passwordInput" class="text-white font-medium mt-5 p-2"
+        >Password:</label
+      >
+      <input
+        id="passwordInput"
+        type="password"
+        placeholder="Password"
+        formControlName="password"
+        class="block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+      />
+      <button
+        class="bg-indigo-500 hover:bg-indigo-400 text-white font-semibold py-2 px-4 mt-5 rounded shadow"
+      >
+        Submit
+      </button>
+      <span *ngIf="err" class="text-[#C4B0FF] mt-2">*{{ err }}</span>
+    </form>
+    <a routerLink="/signup" class="text-white lowercase hover:underline font-medium">Sign-up</a>
+  </section>
+</div>
